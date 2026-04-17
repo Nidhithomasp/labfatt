@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: password-reset
-        image: YOUR_DOCKERHUB_USERNAME/password-reset:latest
+        image: nidhithomasp/password-reset:latest
         ports:
         - containerPort: 8080
         resources:
