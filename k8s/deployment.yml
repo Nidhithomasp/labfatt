@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: password-reset-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: password-reset
+  template:
+    metadata:
+      labels:
+        app: password-reset
+    spec:
+      containers:
+      - name: password-reset
+        image: YOUR_DOCKERHUB_USERNAME/password-reset:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
